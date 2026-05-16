@@ -7734,7 +7734,7 @@ int whisper_full_with_state(
             // ref: https://github.com/ggml-org/whisper.cpp/pull/2629
             const bool max_tokens_timestamp_ending = params.max_tokens > 0 &&
                 !params.single_segment &&
-                tokens_cur.size() > (size_t) params.max_tokens;
+                tokens_cur.size() >= (size_t) params.max_tokens;
 
             const bool single_timestamp_ending = tokens_cur.size() > 1 &&
                 !max_tokens_timestamp_ending &&
